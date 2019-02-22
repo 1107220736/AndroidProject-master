@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_register_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_100"
+        app:bar_style="transparent"
+        app:icon_back="true"
+        app:title="切换单词书"
+        app:color_title="@color/colorPrimaryDark"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/colorPrimary"
+        />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tb_ch_word"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_100"
+        app:layout_constraintTop_toBottomOf="@+id/tb_register_title"
+        app:layout_constraintBottom_toTopOf="@+id/vp_list"
+        android:background="@color/colorPrimary"
+        app:tabIndicatorHeight = "@dimen/space_8"
+        app:tabTextColor="@color/colorTabWord"
+        app:tabSelectedTextColor="@color/colorPrimaryDark"
+        app:tabIndicatorColor="@color/colorYellow"
+        app:tabMode="scrollable"
+        app:tabGravity="fill"
+        app:tabMaxWidth="@dimen/space_120"
+        android:requiresFadingEdge="horizontal"
+        android:fadingEdgeLength="100dp"
+        tools:ignore="MissingPrefix"></android.support.design.widget.TabLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/tb_ch_word"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</android.support.constraint.ConstraintLayout>

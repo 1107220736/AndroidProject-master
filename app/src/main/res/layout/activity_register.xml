@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.activity.RegisterActivity">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_register_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_100"
+        app:bar_style="transparent"
+        app:color_right="@color/colorPrimaryDark"
+        app:icon_back="true"
+        app:title=""
+        app:title_right="@string/register_login" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/space_80"
+            android:layout_marginRight="@dimen/space_80"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_100"
+                android:text="@string/register_text"
+                android:textColor="@color/colorPrimaryDark"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="@dimen/font_size_46px" />
+
+            <EditText
+                android:id="@+id/et_register_phone"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tv_register"
+                android:hint="@string/register_phone_input_hint"
+                android:layout_marginTop="@dimen/space_32"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:maxLines="1" />
+
+            <LinearLayout
+                android:id="@+id/ll_register_edit1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/et_register_phone"
+                android:layout_marginTop="@dimen/space_32"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <EditText
+                    app:layout_constraintTop_toBottomOf="@+id/ll_register_edit1"
+                    android:id="@+id/et_register_code"
+                    style="@style/EditTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/register_code_input_hint"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:maxLines="1" />
+
+                <com.hjq.baselibrary.widget.CountdownView
+                    android:id="@+id/cv_register_countdown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_16"
+                    android:background="@drawable/shape_white_line_yellow"
+                    android:text="@string/register_send_code"
+                     />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_register_password1"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/ll_register_edit1"
+                android:layout_marginTop="@dimen/space_32"
+                android:hint="@string/register_password_input_hint1"
+                android:inputType="textPassword"
+                android:maxLength="20"
+                android:maxLines="1" />
+
+
+
+            <Button
+                android:id="@+id/btn_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/et_register_password1"
+                android:layout_marginTop="@dimen/space_60"
+                android:background="@drawable/shape_yellow"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="@string/register_text" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>
